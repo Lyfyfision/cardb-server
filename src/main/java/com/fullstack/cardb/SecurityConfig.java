@@ -33,11 +33,16 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .authorizeHttpRequests((authz) -> authz
-                        .requestMatchers(HttpMethod.POST, "/login", "/").permitAll()
-                        .anyRequest().authenticated())
-                .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .exceptionHandling(exception -> exception.authenticationEntryPoint(authEntryPoint))
-                .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class);
+                        .anyRequest().permitAll());
+
+//                .csrf(csrf -> csrf.disable())
+//                .cors(cors -> cors.configurationSource(corsConfigurationSource()))
+//                .authorizeHttpRequests((authz) -> authz
+//                        .requestMatchers(HttpMethod.POST, "/login", "/").permitAll()
+//                        .anyRequest().authenticated())
+//                .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+//                .exceptionHandling(exception -> exception.authenticationEntryPoint(authEntryPoint))
+//                .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class);
 
                return http.build();
     }
