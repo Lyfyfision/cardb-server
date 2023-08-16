@@ -31,8 +31,8 @@ public class Car {
     @Column(name = "color")
     private String color;
 
-    @NotBlank
-    @NonNull
+//    @NotBlank
+//    @NonNull
     @Column(name = "regnumber")
     private String regNum;
 

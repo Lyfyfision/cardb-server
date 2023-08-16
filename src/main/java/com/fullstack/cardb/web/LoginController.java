@@ -2,6 +2,7 @@ package com.fullstack.cardb.web;
 
 import com.fullstack.cardb.domain.AccountCredentials;
 import com.fullstack.cardb.service.JwtService;
+import org.checkerframework.checker.units.qual.C;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +19,7 @@ public class LoginController {
     private AuthenticationManager authenticationManager;
 
     @RequestMapping(value="/login", method= RequestMethod.POST)
+    @CrossOrigin
     public ResponseEntity<?> getToken(@RequestBody AccountCredentials credentials) {
         UsernamePasswordAuthenticationToken creds = new UsernamePasswordAuthenticationToken(
                 credentials.getUsername(), credentials.getPassword());

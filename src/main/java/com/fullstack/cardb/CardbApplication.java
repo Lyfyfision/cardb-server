@@ -37,8 +37,8 @@ public class CardbApplication implements CommandLineRunner {
         Owner july = new Owner("July", "Simson");
         ownerRepo.saveAll(Arrays.asList(sam, july));
 
-        Car car1 = new Car("Sportage", "Kia", "Yellow", "JH252K", 2010, 1500000, "just a car", july);
-        Car car2 = new Car("Mustang", "Ford", "Red", "AHG164", 2000, 3000000, "rich car",
+        Car car1 = new Car("Sportage", "Kia", "Yellow", 2010, 1500000, "just a car", july);
+        Car car2 = new Car("Mustang", "Ford", "Red", 2000, 3000000, "rich car",
                         sam);
         repo.saveAll(Arrays.asList(car1, car2));
 
